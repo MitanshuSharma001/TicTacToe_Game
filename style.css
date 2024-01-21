@@ -49,6 +49,7 @@ body{
     gap: 20px;
     border: 2px dotted black;
     background-color: rgb(10, 142, 21);
+    margin-bottom: 20rem;
 }
 .row1, .row2, .row3{
     display: flex;
