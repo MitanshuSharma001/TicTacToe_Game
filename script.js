@@ -1,6 +1,8 @@
 let input1 = document.querySelector(".player1input")
+let input1value = null;
+let input2value = null;
 input1.addEventListener("input", function() {
-    let input1value = input1.value.toUpperCase()
+    input1value = input1.value.toUpperCase()
     console.log(input1value.toUpperCase())
 })
 input1.addEventListener("click", function () {
@@ -8,7 +10,7 @@ input1.addEventListener("click", function () {
 })
 let input2 = document.querySelector(".player2input")
 input2.addEventListener("input", function() {
-    let input2value = input2.value.toUpperCase()
+    input2value = input2.value.toUpperCase()
     console.log(input2value)
 })
 input2.addEventListener("click", function () {
@@ -18,8 +20,21 @@ window.addEventListener("load", function () {
     input1.value = ""
     input2.value = ""
 })
+function change() {
+    if (input1value == null && input2value == null) {
+        input1.value = "PLAYER 1"
+        input2.value = "PLAYER 2"
+    }
+    else if (input1value == null) {
+        input1.value = "PLAYER 1"
+    }
+    else if (input2value == null) {
+        input2.value = "PLAYER 2"
+    }
+}
 const startf = async() =>  {
     document.querySelector(".start").addEventListener("click", function() {
+        change()
         document.querySelector(".playersinput").style.display = "none"
         document.querySelector(".start").style.display = "none"
         document.querySelector(".players").style.display = "flex"
